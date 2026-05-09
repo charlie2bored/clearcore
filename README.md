@@ -2,8 +2,13 @@
 
 > Marketing site for a fictional gluten-free protein bar brand — built as a portfolio piece exploring identity design, scroll-driven motion, and brand iteration in code.
 
-**Live (local):** `npm run dev` → http://localhost:5173
+![Clear Core — hero](docs/hero.png)
+
+**Built by [Your Name]** — design + frontend · [you@example.com](mailto:you@example.com) · [portfolio](https://example.com)
+
+**Live:** _deploy pending_ — see [Deployment](#deployment) below
 **Repo:** [github.com/charlie2bored/clearcore](https://github.com/charlie2bored/clearcore)
+**Design journey:** [docs/JOURNEY.md](docs/JOURNEY.md) — seven phases of iteration, from foundation to current Snack Mix identity
 
 ---
 
@@ -173,6 +178,31 @@ npm run lint
 ```
 
 Node 20+ recommended.
+
+---
+
+## Deployment
+
+The repo ships with a `vercel.json` configured for SPA routing (so React Router deep links like `/flavors/chocolate` resolve correctly).
+
+**Option 1 — Vercel GitHub integration (fastest):**
+
+1. Visit [vercel.com/new](https://vercel.com/new)
+2. Import this repo
+3. Vercel auto-detects Vite — no config changes needed
+4. Click **Deploy** (~3 minutes)
+5. The live URL appears at the top of the deployment dashboard
+
+**Option 2 — Vercel CLI:**
+
+```bash
+npx vercel             # walks through login + project setup
+npx vercel --prod      # deploys to production
+```
+
+Either path produces a `*.vercel.app` URL. Update the **Live** line in this README once deployed.
+
+For a deeper retrospective on the iteration history (palette swaps, hero rebuild, identity v1 → v2), see [docs/JOURNEY.md](docs/JOURNEY.md).
 
 ---
 
