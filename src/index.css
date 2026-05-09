@@ -44,3 +44,9 @@
     margin: 0;
   }
 }
+
+@layer components {
+  .contact-input {
+    @apply w-full bg-white border border-dark-brown/20 rounded-2xl px-5 py-4 text-dark-brown placeholder-dark-brown/40 focus:outline-none focus:border-dark-brown transition-colors;
+  }
+}

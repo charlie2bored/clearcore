@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -172,16 +173,21 @@ export default function Hero() {
             20g of protein, no shortcuts, made for the days that demand more.
           </motion.p>
 
-          <motion.button
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.7 }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="mt-10 bg-light-brown text-dark-brown font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full shadow-lg hover:bg-dark-brown hover:text-milk transition-colors"
+            className="mt-10 inline-block"
           >
-            Try a Bar
-          </motion.button>
+            <Link
+              to="/flavors"
+              className="inline-block bg-light-brown text-dark-brown font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full shadow-lg hover:bg-dark-brown hover:text-milk transition-colors"
+            >
+              Try a Bar
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>
