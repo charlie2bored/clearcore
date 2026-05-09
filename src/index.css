@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-black: #222123;
-  --color-dark-brown: #523122;
-  --color-milk: #faeade;
-  --color-middle-brown: #a26833;
-  --color-light-brown: #e3a458;
-  --color-red: #a02128;
+  /* Lab Notebook palette — sage + bone + ink, single clay accent */
+  --color-bone: #f4f1ea;
+  --color-dust: #e8e3d2;
+  --color-mist: #c5cdb6;
+  --color-sage: #5e7050;
+  --color-deep-sage: #3f4d36;
+  --color-ink: #1a1a1a;
+  --color-clay: #c8553d;
+  --color-black: #0a0a0a;
 
-  --font-display: "Antonio", sans-serif;
-  --font-script: "Pacifico", cursive;
+  /* Fraunces is a single variable serif used for all display + wordmark.
+     Italic + optical-sizing axes carry brand voice instead of a script font. */
+  --font-display: "Fraunces", "Times New Roman", serif;
   --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 }
 
 @layer base {
@@ -18,8 +23,8 @@
   body {
     margin: 0;
     padding: 0;
-    background-color: var(--color-milk);
-    color: var(--color-dark-brown);
+    background-color: var(--color-bone);
+    color: var(--color-ink);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -37,16 +42,18 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 0.95;
+    font-weight: 600;
+    /* Editorial serif sets its own rhythm — keep upright, normal case. */
+    letter-spacing: -0.015em;
+    line-height: 1;
     margin: 0;
+    /* Use Fraunces' optical-sizing axis at display sizes for sharper details */
+    font-optical-sizing: auto;
   }
 }
 
 @layer components {
   .contact-input {
-    @apply w-full bg-white border border-dark-brown/20 rounded-2xl px-5 py-4 text-dark-brown placeholder-dark-brown/40 focus:outline-none focus:border-dark-brown transition-colors;
+    @apply w-full bg-bone border border-ink/20 rounded-2xl px-5 py-4 text-ink placeholder-ink/40 focus:outline-none focus:border-ink transition-colors;
   }
 }

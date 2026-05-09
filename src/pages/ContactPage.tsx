@@ -39,13 +39,13 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 bg-milk">
+      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 bg-bone">
         <div className="max-w-[1200px] mx-auto text-center">
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-middle-brown font-display"
+            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-sage font-display"
           >
             Say hi
           </motion.span>
@@ -53,33 +53,33 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mt-3 font-display uppercase text-dark-brown text-[14vw] md:text-[7vw] leading-[0.95]"
+            className="mt-3 font-display uppercase text-ink text-[14vw] md:text-[7vw] leading-[0.95]"
           >
             We read
             <br />
-            <span className="inline-block bg-middle-brown text-milk px-4 -rotate-[2deg]">
+            <span className="inline-block bg-sage text-bone px-4 -rotate-[2deg]">
               every note.
             </span>
           </motion.h1>
-          <p className="mt-6 text-dark-brown/80 max-w-md mx-auto">
+          <p className="mt-6 text-ink/80 max-w-md mx-auto">
             Wholesale, partnerships, customer support, or just to tell us how
             the chocolate bar made your morning — drop us a line.
           </p>
         </div>
       </section>
 
-      <section className="px-6 pb-24 md:pb-32 bg-milk">
+      <section className="px-6 pb-24 md:pb-32 bg-bone">
         <div className="max-w-2xl mx-auto">
           {sent ? (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-[#f3e7d4] rounded-3xl p-10 text-center"
+              className="bg-[#e8e3d2] rounded-3xl p-10 text-center"
             >
-              <h2 className="font-display uppercase text-3xl md:text-4xl text-dark-brown">
+              <h2 className="font-display uppercase text-3xl md:text-4xl text-ink">
                 Thanks for the note.
               </h2>
-              <p className="mt-4 text-dark-brown/80">
+              <p className="mt-4 text-ink/80">
                 We'll get back to you within two business days.
               </p>
               <button
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   setSent(false);
                   setForm({ name: "", email: "", topic: topics[0], message: "" });
                 }}
-                className="mt-6 text-xs uppercase tracking-widest underline text-dark-brown/80 hover:text-dark-brown"
+                className="mt-6 text-xs uppercase tracking-widest underline text-ink/80 hover:text-ink"
               >
                 Send another
               </button>
@@ -135,32 +135,32 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full md:w-auto bg-dark-brown text-milk font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-middle-brown transition-colors"
+                className="w-full md:w-auto bg-ink text-bone font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-sage transition-colors"
               >
                 Send message
               </button>
             </form>
           )}
 
-          <div className="mt-12 pt-12 border-t border-dark-brown/10 text-sm text-dark-brown/80 grid sm:grid-cols-2 gap-6">
+          <div className="mt-12 pt-12 border-t border-ink/10 text-sm text-ink/80 grid sm:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-display uppercase text-dark-brown mb-1 text-base">
+              <h3 className="font-display uppercase text-ink mb-1 text-base">
                 Wholesale
               </h3>
               <a
                 href="mailto:wholesale@clearcore.example"
-                className="underline hover:text-dark-brown"
+                className="underline hover:text-ink"
               >
                 wholesale@clearcore.example
               </a>
             </div>
             <div>
-              <h3 className="font-display uppercase text-dark-brown mb-1 text-base">
+              <h3 className="font-display uppercase text-ink mb-1 text-base">
                 Press
               </h3>
               <a
                 href="mailto:press@clearcore.example"
-                className="underline hover:text-dark-brown"
+                className="underline hover:text-ink"
               >
                 press@clearcore.example
               </a>
@@ -181,7 +181,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="block text-xs uppercase tracking-widest text-dark-brown/70 mb-2">
+      <span className="block text-xs uppercase tracking-widest text-ink/70 mb-2">
         {label}
       </span>
       {children}

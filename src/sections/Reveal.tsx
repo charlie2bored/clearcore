@@ -23,9 +23,9 @@ export default function Reveal() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         wordsRef.current,
-        { color: "#3a2014", opacity: 0.25 },
+        { color: "#1a1a1a", opacity: 0.25 },
         {
-          color: "#faeade",
+          color: "#f4f1ea",
           opacity: 1,
           stagger: 0.04,
           ease: "none",
@@ -60,7 +60,7 @@ export default function Reveal() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen w-full bg-dark-brown flex items-center justify-center px-6 overflow-hidden"
+      className="relative h-screen w-full bg-ink flex items-center justify-center px-6 overflow-hidden"
     >
       <h2 className="font-display uppercase text-center leading-[1.05] tracking-[-0.02em] text-[10vw] md:text-[6.4vw] max-w-[1400px]">
         <span className="block">
@@ -74,7 +74,7 @@ export default function Reveal() {
         </span>
         <span className="block">
           {lines[3].map((w, i) => renderWord(w, `d-${i}-${w}`))}
-          <span className="inline-block bg-light-brown text-dark-brown px-3 md:px-5 -rotate-[3deg] mx-1">
+          <span className="inline-block bg-mist text-ink px-3 md:px-5 -rotate-[3deg] mx-1">
             no shortcuts
           </span>
         </span>

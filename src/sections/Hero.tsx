@@ -91,7 +91,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen w-full overflow-hidden bg-milk pt-24"
+      className="relative min-h-screen w-full overflow-hidden bg-bone pt-24"
     >
       {/* background floating bars */}
       {floatingBars.map((b, i) => (
@@ -139,7 +139,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-middle-brown font-display"
+            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-sage font-display"
           >
             Gluten Free · 20g Protein
           </motion.span>
@@ -148,7 +148,7 @@ export default function Hero() {
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-            className="mt-3 font-display text-dark-brown text-[14vw] md:text-[8vw] leading-[0.95] tracking-tight"
+            className="mt-3 font-display text-ink text-[14vw] md:text-[8vw] leading-[0.95] tracking-tight"
           >
             Real Food.
           </motion.h1>
@@ -156,9 +156,9 @@ export default function Hero() {
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
-            className="inline-block bg-middle-brown px-6 py-2 -mt-3 md:-mt-6 rotate-[-2deg]"
+            className="inline-block bg-sage px-6 py-2 -mt-3 md:-mt-6 rotate-[-2deg]"
           >
-            <h1 className="font-display text-milk text-[14vw] md:text-[8vw] leading-[0.95] tracking-tight">
+            <h1 className="font-display text-bone text-[14vw] md:text-[8vw] leading-[0.95] tracking-tight">
               Honest Fuel.
             </h1>
           </motion.div>
@@ -167,7 +167,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="mt-8 text-dark-brown/85 text-sm md:text-base max-w-md mx-auto leading-relaxed"
+            className="mt-8 text-ink/85 text-sm md:text-base max-w-md mx-auto leading-relaxed"
           >
             Clear Core is a gluten-free protein bar built from real ingredients —
             20g of protein, no shortcuts, made for the days that demand more.
@@ -183,7 +183,7 @@ export default function Hero() {
           >
             <Link
               to="/flavors"
-              className="inline-block bg-light-brown text-dark-brown font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full shadow-lg hover:bg-dark-brown hover:text-milk transition-colors"
+              className="inline-block bg-mist text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full shadow-lg hover:bg-ink hover:text-bone transition-colors"
             >
               Try a Bar
             </Link>

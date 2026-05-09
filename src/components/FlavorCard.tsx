@@ -23,7 +23,7 @@ export default function FlavorCard({
     >
       <Link
         to={`/flavors/${flavor.slug}`}
-        className="group relative block rounded-[2rem] overflow-hidden cursor-pointer focus:outline-none focus:ring-4 focus:ring-light-brown/60"
+        className="group relative block rounded-[2rem] overflow-hidden cursor-pointer focus:outline-none focus:ring-4 focus:ring-mist/60"
       >
         {/* tint backdrop */}
         <div
@@ -52,7 +52,7 @@ export default function FlavorCard({
         </div>
 
         {/* label band */}
-        <div className="relative bg-dark-brown/95 text-milk px-6 py-5 flex items-center justify-between transition-colors duration-500 group-hover:bg-light-brown group-hover:text-dark-brown">
+        <div className="relative bg-ink/95 text-bone px-6 py-5 flex items-center justify-between transition-colors duration-500 group-hover:bg-mist group-hover:text-ink">
           <div className="min-w-0">
             <h3 className="font-display uppercase text-xl md:text-2xl tracking-tight leading-tight">
               {flavor.name}

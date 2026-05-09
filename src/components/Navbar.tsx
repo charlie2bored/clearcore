@@ -17,8 +17,8 @@ export default function Navbar() {
         {/* wordmark */}
         <Link
           to="/"
-          className={`font-script text-3xl md:text-4xl pointer-events-auto select-none transition-colors ${
-            open ? "text-milk" : "text-dark-brown"
+          className={`font-display italic font-semibold text-2xl md:text-3xl pointer-events-auto select-none transition-colors ${
+            open ? "text-bone" : "text-ink"
           }`}
         >
           Clear Core
@@ -34,20 +34,20 @@ export default function Navbar() {
           <span
             className={`block h-[2px] w-7 transition-all ${
               open
-                ? "translate-y-[7px] rotate-45 bg-milk"
-                : "bg-dark-brown"
+                ? "translate-y-[7px] rotate-45 bg-bone"
+                : "bg-ink"
             }`}
           />
           <span
             className={`block h-[2px] w-7 transition-opacity ${
-              open ? "opacity-0 bg-milk" : "bg-dark-brown"
+              open ? "opacity-0 bg-bone" : "bg-ink"
             }`}
           />
           <span
             className={`block h-[2px] w-7 transition-all ${
               open
-                ? "-translate-y-[7px] -rotate-45 bg-milk"
-                : "bg-dark-brown"
+                ? "-translate-y-[7px] -rotate-45 bg-bone"
+                : "bg-ink"
             }`}
           />
         </button>
@@ -57,8 +57,8 @@ export default function Navbar() {
           to="/stores"
           className={`pointer-events-auto border text-xs md:text-sm font-display tracking-[0.15em] uppercase px-5 md:px-6 py-3 rounded-full transition-colors ${
             open
-              ? "bg-transparent border-milk text-milk hover:bg-milk hover:text-dark-brown"
-              : "bg-milk border-dark-brown/10 text-dark-brown hover:bg-dark-brown hover:text-milk"
+              ? "bg-transparent border-bone text-bone hover:bg-bone hover:text-ink"
+              : "bg-bone border-ink/10 text-ink hover:bg-ink hover:text-bone"
           }`}
         >
           Find In Stores

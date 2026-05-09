@@ -12,7 +12,7 @@ export default function Nutrition() {
   return (
     <section
       id="nutrition"
-      className="relative w-full bg-[#f3e7d4] overflow-hidden py-24 md:py-32 px-6"
+      className="relative w-full bg-[#e8e3d2] overflow-hidden py-24 md:py-32 px-6"
     >
       <div className="max-w-[1400px] mx-auto">
         {/* heading */}
@@ -23,13 +23,13 @@ export default function Nutrition() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-block uppercase tracking-[0.25em] text-xs md:text-sm text-middle-brown font-display">
+            <span className="inline-block uppercase tracking-[0.25em] text-xs md:text-sm text-sage font-display">
               The fine print
             </span>
-            <h2 className="mt-3 font-display uppercase text-dark-brown text-[12vw] md:text-[5.5vw] leading-[0.92]">
+            <h2 className="mt-3 font-display uppercase text-ink text-[12vw] md:text-[5.5vw] leading-[0.92]">
               Built clean.
               <br />
-              <span className="inline-block bg-middle-brown text-milk px-4 -rotate-[2deg]">
+              <span className="inline-block bg-sage text-bone px-4 -rotate-[2deg]">
                 Built honest.
               </span>
             </h2>
@@ -40,7 +40,7 @@ export default function Nutrition() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-dark-brown/80 text-sm md:text-base max-w-md md:justify-self-end"
+            className="text-ink/80 text-sm md:text-base max-w-md md:justify-self-end"
           >
             No mystery additives. No filler. Just whole-food protein and the
             micronutrients your body actually uses — all gluten-free, every bar.
@@ -53,17 +53,17 @@ export default function Nutrition() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="bg-milk rounded-full shadow-xl px-6 md:px-12 py-5 md:py-7 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-2 mb-16"
+          className="bg-bone rounded-full shadow-xl px-6 md:px-12 py-5 md:py-7 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-2 mb-16"
         >
           {callouts.map((c) => (
             <div
               key={c.label}
-              className="flex flex-col items-center text-center border-r last:border-r-0 border-dark-brown/15 px-2"
+              className="flex flex-col items-center text-center border-r last:border-r-0 border-ink/15 px-2"
             >
-              <span className="font-display text-dark-brown text-2xl md:text-4xl leading-none">
+              <span className="font-display text-ink text-2xl md:text-4xl leading-none">
                 {c.value}
               </span>
-              <span className="text-dark-brown/70 text-[10px] md:text-xs mt-2 uppercase tracking-wider">
+              <span className="text-ink/70 text-[10px] md:text-xs mt-2 uppercase tracking-wider">
                 {c.label}
               </span>
             </div>
@@ -106,16 +106,16 @@ export default function Nutrition() {
  */
 function NutritionFactsPanel() {
   return (
-    <div className="bg-milk text-dark-brown rounded-2xl p-6 md:p-8 max-w-md mx-auto md:mx-0 shadow-xl border-2 border-dark-brown font-body">
-      <h3 className="font-display text-3xl md:text-4xl tracking-tight uppercase border-b-[6px] border-dark-brown pb-1 mb-2">
+    <div className="bg-bone text-ink rounded-2xl p-6 md:p-8 max-w-md mx-auto md:mx-0 shadow-xl border-2 border-ink font-body">
+      <h3 className="font-display text-3xl md:text-4xl tracking-tight uppercase border-b-[6px] border-ink pb-1 mb-2">
         Nutrition Facts
       </h3>
-      <div className="text-xs flex justify-between border-b border-dark-brown/40 pb-2 mb-1">
+      <div className="text-xs flex justify-between border-b border-ink/40 pb-2 mb-1">
         <span>Serving size</span>
         <span className="font-semibold">1 Bar (60g)</span>
       </div>
 
-      <div className="border-b-[6px] border-dark-brown py-2 flex items-end justify-between">
+      <div className="border-b-[6px] border-ink py-2 flex items-end justify-between">
         <div>
           <div className="text-xs">Amount per serving</div>
           <div className="font-display text-2xl md:text-3xl uppercase">
@@ -125,7 +125,7 @@ function NutritionFactsPanel() {
         <div className="font-display text-4xl md:text-5xl">220</div>
       </div>
 
-      <div className="text-[10px] text-right pt-1 pb-1 border-b border-dark-brown/40">
+      <div className="text-[10px] text-right pt-1 pb-1 border-b border-ink/40">
         % Daily Value*
       </div>
 
@@ -140,14 +140,14 @@ function NutritionFactsPanel() {
       <Row label="Includes 8g Added Sugars" amount="" dv="16%" indent2 />
       <Row label="Protein" amount="20g" dv="40%" bold heavy />
 
-      <div className="border-t-[6px] border-dark-brown mt-1 pt-2 grid grid-cols-2 gap-x-4 text-xs">
+      <div className="border-t-[6px] border-ink mt-1 pt-2 grid grid-cols-2 gap-x-4 text-xs">
         <MicroRow label="Vitamin D" amount="0mcg" dv="0%" />
         <MicroRow label="Calcium" amount="110mg" dv="8%" />
         <MicroRow label="Iron" amount="1mg" dv="6%" />
         <MicroRow label="Potassium" amount="180mg" dv="4%" />
       </div>
 
-      <p className="text-[9px] leading-snug mt-3 text-dark-brown/70">
+      <p className="text-[9px] leading-snug mt-3 text-ink/70">
         *The % Daily Value tells you how much a nutrient in a serving of food
         contributes to a daily diet. 2,000 calories a day is used for general
         nutrition advice.
@@ -179,7 +179,7 @@ function Row({
 }: RowProps) {
   return (
     <div
-      className={`flex justify-between text-sm py-1 border-b ${heavy ? "border-b-[6px] border-dark-brown" : "border-dark-brown/30"}`}
+      className={`flex justify-between text-sm py-1 border-b ${heavy ? "border-b-[6px] border-ink" : "border-ink/30"}`}
     >
       <span
         className={`${bold ? "font-bold" : ""} ${italic ? "italic" : ""} ${indent ? "pl-4" : ""} ${indent2 ? "pl-8" : ""}`}
@@ -204,7 +204,7 @@ function MicroRow({
   dv: string;
 }) {
   return (
-    <div className="flex justify-between border-b border-dark-brown/30 py-1">
+    <div className="flex justify-between border-b border-ink/30 py-1">
       <span>
         {label} {amount}
       </span>
