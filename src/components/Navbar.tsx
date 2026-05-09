@@ -16,7 +16,7 @@ export default function Navbar() {
         href="/"
         className="font-script text-3xl md:text-4xl text-dark-brown pointer-events-auto select-none"
       >
-        clearcore
+        Clear Core
       </a>
 
       {/* hamburger */}

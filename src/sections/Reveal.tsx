@@ -6,11 +6,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Pinned section: a long uppercase headline reveals from
- * faded to fully bright as the user scrolls. Ends with a
- * highlighted phrase tucked into a tilted color block.
+ * faded to fully bright as the user scrolls. One phrase
+ * sits inside a tilted accent block.
  *
- * Copy is original to clearcore — written for the
- * "clean fuel / daily craft" brand voice.
+ * Copy is original to Clear Core.
  */
 export default function Reveal() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -43,12 +42,13 @@ export default function Reveal() {
     return () => ctx.revert();
   }, []);
 
-  // Lines kept short on purpose so each word can stagger-reveal cleanly.
+  // Short lines so each word stagger-reveals cleanly.
   const lines: string[][] = [
-    ["Pour", "something", "honest"],
-    ["into", "the", "everyday", "and"],
-    ["a", "quieter", "kind", "of"],
-    ["carries", "you", "the", "rest", "of", "the", "way"],
+    ["Real", "food."],
+    ["Real", "protein."],
+    ["Just", "one", "honest", "bar"],
+    ["for", "the", "days", "that"],
+    ["demand", "more."],
   ];
 
   const renderWord = (word: string, key: string) => (
@@ -70,15 +70,16 @@ export default function Reveal() {
           {lines[1].map((w, i) => renderWord(w, `b-${i}-${w}`))}
         </span>
         <span className="block">
-          <span className="inline-block bg-light-brown text-dark-brown px-4 md:px-6 -rotate-[3deg] mx-2">
-            momentum
-          </span>
-        </span>
-        <span className="block">
           {lines[2].map((w, i) => renderWord(w, `c-${i}-${w}`))}
         </span>
         <span className="block">
           {lines[3].map((w, i) => renderWord(w, `d-${i}-${w}`))}
+          <span className="inline-block bg-light-brown text-dark-brown px-3 md:px-5 -rotate-[3deg] mx-1">
+            no shortcuts
+          </span>
+        </span>
+        <span className="block">
+          {lines[4].map((w, i) => renderWord(w, `e-${i}-${w}`))}
         </span>
       </h2>
     </section>

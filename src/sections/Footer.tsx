@@ -12,7 +12,7 @@ export default function Footer() {
           transition={{ duration: 0.7 }}
           className="font-display uppercase text-[10vw] md:text-[5.5vw] leading-[0.95]"
         >
-          Find a core
+          Find a bar
           <br />
           <span className="inline-block bg-light-brown text-dark-brown px-4 -rotate-[2deg]">
             near you
@@ -34,7 +34,7 @@ export default function Footer() {
 
       {/* base bar */}
       <div className="border-t border-milk/15 px-6 md:px-12 py-8 flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between text-xs md:text-sm">
-        <span className="font-script text-2xl">clearcore</span>
+        <span className="font-script text-2xl">Clear Core</span>
         <nav className="flex gap-6 uppercase tracking-widest text-milk/70">
           <a href="#" className="hover:text-milk">
             About
@@ -50,7 +50,7 @@ export default function Footer() {
           </a>
         </nav>
         <span className="text-milk/50">
-          © {new Date().getFullYear()} clearcore
+          © {new Date().getFullYear()} Clear Core
         </span>
       </div>
     </footer>

@@ -2,68 +2,57 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Can from "../components/Can";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type FloatingCan = {
+type FloatingBar = {
+  src: string;
   className: string;
   rotate: number;
-  text: { color: string; fill: string };
-  gradient: string;
-  splash: string;
-  flavor: string;
   opacity?: number;
+  blur?: string;
 };
 
-const cans: FloatingCan[] = [
+const floatingBars: FloatingBar[] = [
   {
-    className: "top-[6%] left-[8%] w-[7rem] md:w-[10rem] text-light-brown/70",
-    rotate: -18,
-    text: { color: "text-light-brown", fill: "#a26833" },
-    gradient: "from-light-brown to-middle-brown",
-    splash: "#7a4520",
-    flavor: "VANILLA",
+    src: "/products/chocolate.png",
+    className: "top-[6%] left-[6%] w-[10rem] md:w-[14rem]",
+    rotate: -22,
     opacity: 0.55,
+    blur: "blur-[1.5px]",
   },
   {
-    className: "top-[14%] right-[4%] w-[8rem] md:w-[12rem] text-middle-brown",
-    rotate: 22,
-    text: { color: "text-middle-brown", fill: "#a26833" },
-    gradient: "from-middle-brown to-dark-brown",
-    splash: "#523122",
-    flavor: "MOCHA",
+    src: "/products/vanilla.png",
+    className: "top-[14%] right-[3%] w-[12rem] md:w-[16rem]",
+    rotate: 18,
     opacity: 0.6,
+    blur: "blur-[1.5px]",
   },
   {
-    className: "bottom-[2%] left-[18%] w-[8rem] md:w-[11rem] text-red/80",
+    src: "/products/cookies-cream.png",
+    className: "bottom-[4%] left-[14%] w-[11rem] md:w-[15rem]",
     rotate: -28,
-    text: { color: "text-red", fill: "#a02128" },
-    gradient: "from-red to-light-brown",
-    splash: "#7a151b",
-    flavor: "STRAWBERRY",
     opacity: 0.7,
+    blur: "blur-[1px]",
   },
   {
-    className: "bottom-[8%] right-[12%] w-[9rem] md:w-[12rem] text-dark-brown",
-    rotate: 14,
-    text: { color: "text-dark-brown", fill: "#523122" },
-    gradient: "from-dark-brown to-middle-brown",
-    splash: "#3a2014",
-    flavor: "CHOCOLATE",
-    opacity: 0.75,
+    src: "/products/chocolate.png",
+    className: "bottom-[8%] right-[8%] w-[11rem] md:w-[15rem]",
+    rotate: 24,
+    opacity: 0.7,
+    blur: "blur-[1px]",
   },
 ];
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const heroLeftCan = useRef<HTMLDivElement>(null);
-  const heroRightCan = useRef<HTMLDivElement>(null);
+  const heroLeftBar = useRef<HTMLDivElement>(null);
+  const heroRightBar = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Floating cans gently drift with scroll (parallax)
-      gsap.utils.toArray<HTMLElement>(".float-can").forEach((el, i) => {
+      // Floating bars drift gently with scroll
+      gsap.utils.toArray<HTMLElement>(".float-bar").forEach((el, i) => {
         const speed = 0.3 + (i % 3) * 0.2;
         gsap.to(el, {
           y: () => -window.innerHeight * speed * 0.3,
@@ -78,8 +67,8 @@ export default function Hero() {
         });
       });
 
-      // Hero foreground cans rotate inward slightly on scroll
-      [heroLeftCan, heroRightCan].forEach((ref, i) => {
+      // Foreground bars rotate inward slightly on scroll
+      [heroLeftBar, heroRightBar].forEach((ref, i) => {
         if (!ref.current) return;
         gsap.to(ref.current, {
           rotate: i === 0 ? 8 : -10,
@@ -101,100 +90,97 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen w-full overflow-hidden bg-milk"
+      className="relative min-h-screen w-full overflow-hidden bg-milk pt-24"
     >
-      {/* background floating cans */}
-      {cans.map((c, i) => (
-        <div
+      {/* background floating bars */}
+      {floatingBars.map((b, i) => (
+        <img
           key={i}
-          className={`float-can absolute ${c.className} blur-[2px]`}
+          src={b.src}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          className={`float-bar absolute ${b.className} ${b.blur ?? ""} pointer-events-none`}
           style={{
-            transform: `rotate(${c.rotate}deg)`,
-            opacity: c.opacity ?? 0.6,
+            transform: `rotate(${b.rotate}deg)`,
+            opacity: b.opacity ?? 0.6,
           }}
-        >
-          <Can
-            gradient={c.gradient}
-            splash={c.splash}
-            flavor={c.flavor}
-            label="core"
-          />
-        </div>
+        />
       ))}
 
       {/* foreground composition */}
-      <div className="relative z-10 h-full flex items-center justify-center px-6">
-        {/* left foreground can */}
-        <motion.div
-          ref={heroLeftCan}
+      <div className="relative z-10 min-h-[calc(100vh-6rem)] flex items-center justify-center px-6">
+        {/* left foreground bar */}
+        <motion.img
+          ref={heroLeftBar as unknown as React.RefObject<HTMLImageElement>}
+          src="/products/chocolate.png"
+          alt="Clear Core chocolate protein bar"
           initial={{ x: -200, opacity: 0, rotate: -30 }}
-          animate={{ x: 0, opacity: 1, rotate: -18 }}
+          animate={{ x: 0, opacity: 1, rotate: -16 }}
           transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-          className="hidden md:block absolute left-[4%] top-1/2 -translate-y-1/2 w-[18rem] lg:w-[22rem] text-red"
-        >
-          <Can
-            gradient="from-red to-light-brown"
-            splash="#7a151b"
-            flavor="STRAWBERRY"
-            label="core"
-          />
-        </motion.div>
+          className="hidden md:block absolute left-[2%] top-1/2 -translate-y-1/2 w-[22rem] lg:w-[28rem] drop-shadow-2xl"
+        />
 
-        {/* right foreground can */}
-        <motion.div
-          ref={heroRightCan}
+        {/* right foreground bar */}
+        <motion.img
+          ref={heroRightBar as unknown as React.RefObject<HTMLImageElement>}
+          src="/products/vanilla.png"
+          alt="Clear Core vanilla protein bar"
           initial={{ x: 200, opacity: 0, rotate: 30 }}
-          animate={{ x: 0, opacity: 1, rotate: 18 }}
+          animate={{ x: 0, opacity: 1, rotate: 16 }}
           transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="hidden md:block absolute right-[4%] top-1/2 -translate-y-1/2 w-[18rem] lg:w-[22rem] text-middle-brown"
-        >
-          <Can
-            gradient="from-middle-brown to-dark-brown"
-            splash="#523122"
-            flavor="CHOCOLATE"
-            label="core"
-          />
-        </motion.div>
+          className="hidden md:block absolute right-[2%] top-1/2 -translate-y-1/2 w-[22rem] lg:w-[28rem] drop-shadow-2xl"
+        />
 
         {/* headline */}
         <div className="relative z-20 text-center max-w-5xl mx-auto">
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-middle-brown font-display"
+          >
+            Gluten Free · 20g Protein
+          </motion.span>
+
           <motion.h1
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-            className="font-display text-dark-brown text-[12vw] md:text-[7.9vw] leading-[0.95] tracking-tight"
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+            className="mt-3 font-display text-dark-brown text-[14vw] md:text-[8vw] leading-[0.95] tracking-tight"
           >
-            EXTRAORDINARILY GOOD
+            Real Food.
           </motion.h1>
           <motion.div
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.35 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
             className="inline-block bg-middle-brown px-6 py-2 -mt-3 md:-mt-6 rotate-[-2deg]"
           >
-            <h1 className="font-display text-milk text-[12vw] md:text-[7.9vw] leading-[0.95] tracking-tight">
-              PROTEIN + CAFFEINE
+            <h1 className="font-display text-milk text-[14vw] md:text-[8vw] leading-[0.95] tracking-tight">
+              Honest Fuel.
             </h1>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
+            transition={{ duration: 0.7, delay: 0.55 }}
             className="mt-8 text-dark-brown/85 text-sm md:text-base max-w-md mx-auto leading-relaxed"
           >
-            Clean fuel for the days that demand more — smooth protein, bright caffeine, zero compromise.
+            Clear Core is a gluten-free protein bar built from real ingredients —
+            20g of protein, no shortcuts, made for the days that demand more.
           </motion.p>
 
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.75 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="mt-10 bg-light-brown text-dark-brown font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full shadow-lg"
+            className="mt-10 bg-light-brown text-dark-brown font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full shadow-lg hover:bg-dark-brown hover:text-milk transition-colors"
           >
-            Grab a Core
+            Try a Bar
           </motion.button>
         </div>
       </div>
