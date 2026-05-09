@@ -25,11 +25,10 @@ export default function Products() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="mt-3 font-display font-bold text-ink text-[12vw] md:text-[6vw] lg:text-[5.5vw] leading-[0.95] tracking-[-0.025em]"
           >
-            Three flavors,{" "}
+            Three flavors, zero{" "}
             <span className="font-script font-bold text-cherry not-italic inline-block -rotate-2 mx-1">
-              zero
-            </span>{" "}
-            gluten.
+              gluten.
+            </span>
           </motion.h2>
         </div>
 

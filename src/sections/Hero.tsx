@@ -47,11 +47,10 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             className="mt-4 font-display font-bold text-ink text-[12vw] md:text-[6vw] lg:text-[5vw] leading-[0.92] tracking-[-0.025em]"
           >
-            A protein bar that finally{" "}
+            A protein bar that finally tastes like{" "}
             <span className="font-script font-bold text-cherry not-italic inline-block -rotate-2 mx-1">
-              tastes
-            </span>{" "}
-            like food.
+              food.
+            </span>
           </motion.h1>
 
           <motion.p

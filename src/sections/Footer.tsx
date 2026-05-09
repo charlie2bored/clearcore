@@ -41,11 +41,10 @@ export default function Footer() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="mt-3 font-display font-bold text-[12vw] md:text-[6vw] lg:text-[5.5vw] leading-[0.95] tracking-[-0.025em]"
           >
-            Find a bar{" "}
+            Find a bar near{" "}
             <span className="font-script font-bold text-cherry not-italic inline-block -rotate-2 mx-1">
-              near
-            </span>{" "}
-            you.
+              you.
+            </span>
           </motion.h2>
 
           <motion.div
