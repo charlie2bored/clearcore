@@ -80,7 +80,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="bg-cream rounded-3xl p-8 border border-ink/10"
               >
-                <span className="font-display text-5xl text-mint">
+                <span className="font-display text-5xl text-cherry">
                   0{i + 1}
                 </span>
                 <h3 className="mt-4 font-display uppercase text-2xl text-ink">
@@ -101,7 +101,7 @@ export default function AboutPage() {
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/flavors"
-            className="inline-block bg-mint text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cream transition-colors"
+            className="inline-block bg-cherry text-cream font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cream hover:text-ink transition-colors"
           >
             See the flavors
           </Link>

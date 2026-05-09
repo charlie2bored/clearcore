@@ -39,7 +39,7 @@ export default function MobileMenu({
                 <Link
                   to={l.to}
                   onClick={onClose}
-                  className="font-display uppercase tracking-tight text-5xl md:text-7xl hover:text-mint transition-colors"
+                  className="font-display uppercase tracking-tight text-5xl md:text-7xl hover:text-cherry transition-colors"
                 >
                   {l.label}
                 </Link>

@@ -74,7 +74,7 @@ export default function Reveal() {
         </span>
         <span className="block">
           {lines[3].map((w, i) => renderWord(w, `d-${i}-${w}`))}
-          <span className="inline-block bg-mint text-ink px-3 md:px-5 -rotate-[3deg] mx-1">
+          <span className="inline-block bg-cherry text-cream px-3 md:px-5 -rotate-[3deg] mx-1">
             no shortcuts
           </span>
         </span>

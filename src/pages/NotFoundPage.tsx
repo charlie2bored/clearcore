@@ -4,7 +4,7 @@ export default function NotFoundPage() {
   return (
     <section className="min-h-[80vh] flex items-center justify-center px-6 py-32 bg-cream text-center">
       <div>
-        <span className="font-display text-[20vw] md:text-[10vw] text-mint leading-none">
+        <span className="font-display text-[20vw] md:text-[10vw] text-cherry leading-none">
           404
         </span>
         <h1 className="font-display uppercase text-ink text-[10vw] md:text-[4vw] leading-[0.95] mt-4">

@@ -20,7 +20,7 @@ export default function Hero() {
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 -left-32 w-[36rem] h-[36rem] rounded-full bg-mint/30 blur-3xl"
+        className="absolute -bottom-40 -left-32 w-[36rem] h-[36rem] rounded-full bg-butter/40 blur-3xl"
       />
 
       <div className="relative max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">

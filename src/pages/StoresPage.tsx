@@ -53,7 +53,7 @@ export default function StoresPage() {
           >
             Find a bar
             <br />
-            <span className="inline-block bg-mint text-ink px-4 -rotate-[2deg]">
+            <span className="inline-block bg-cherry text-cream px-4 -rotate-[2deg]">
               near you.
             </span>
           </motion.h1>

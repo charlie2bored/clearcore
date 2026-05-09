@@ -22,7 +22,7 @@ export default function Footer() {
         >
           Find a bar
           <br />
-          <span className="inline-block bg-mint text-ink px-4 -rotate-[2deg]">
+          <span className="inline-block bg-cherry text-cream px-4 -rotate-[2deg]">
             near you
           </span>
         </motion.h2>
@@ -36,7 +36,7 @@ export default function Footer() {
         >
           <Link
             to="/stores"
-            className="inline-block bg-cream text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-mint transition-colors"
+            className="inline-block bg-cream text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cherry transition-colors"
           >
             Find In Stores
           </Link>

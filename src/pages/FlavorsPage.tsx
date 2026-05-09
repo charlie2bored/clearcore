@@ -61,7 +61,7 @@ export default function FlavorsPage() {
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/stores"
-            className="inline-block bg-mint text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cream transition-colors"
+            className="inline-block bg-cherry text-cream font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cream hover:text-ink transition-colors"
           >
             Find In Stores
           </Link>
