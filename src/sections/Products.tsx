@@ -8,28 +8,28 @@ export default function Products() {
     <section id="flavors" className="relative w-full bg-cream py-24 md:py-32 px-6">
       <div className="max-w-[1400px] mx-auto">
         <div className="text-center mb-16 md:mb-20">
-          <motion.span
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-block uppercase tracking-[0.25em] text-xs md:text-sm text-cherry font-display"
+          <motion.div
+            initial={{ opacity: 0, rotate: -8, y: -10 }}
+            whileInView={{ opacity: 1, rotate: -3, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ type: "spring", stiffness: 220, damping: 14 }}
+            className="font-script text-cherry text-2xl md:text-3xl inline-block"
           >
-            Pick your bar
-          </motion.span>
+            pick a snack <span aria-hidden="true">✦</span>
+          </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.7 }}
-            className="mt-3 font-display uppercase text-ink text-[12vw] md:text-[5.5vw] leading-[0.95]"
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-3 font-display font-bold text-ink text-[12vw] md:text-[6vw] lg:text-[5.5vw] leading-[0.95] tracking-[-0.025em]"
           >
-            Three flavors,
-            <br />
-            <span className="inline-block bg-cherry text-cream px-4 -rotate-[2deg]">
-              zero gluten.
-            </span>
+            Three flavors,{" "}
+            <span className="font-script font-bold text-cherry not-italic inline-block -rotate-2 mx-1">
+              zero
+            </span>{" "}
+            gluten.
           </motion.h2>
         </div>
 

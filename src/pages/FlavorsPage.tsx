@@ -9,25 +9,25 @@ export default function FlavorsPage() {
       {/* hero band */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-cream">
         <div className="max-w-[1200px] mx-auto text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-cherry font-display"
+          <motion.div
+            initial={{ opacity: 0, rotate: -8, y: -10 }}
+            animate={{ opacity: 1, rotate: -3, y: 0 }}
+            transition={{ type: "spring", stiffness: 220, damping: 14 }}
+            className="font-script text-cherry text-2xl md:text-3xl inline-block"
           >
-            Our lineup
-          </motion.span>
+            the whole lineup <span aria-hidden="true">✦</span>
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="mt-3 font-display uppercase text-ink text-[14vw] md:text-[7.5vw] leading-[0.95]"
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-3 font-display font-bold text-ink text-[14vw] md:text-[7.5vw] leading-[0.95] tracking-[-0.025em]"
           >
-            Three flavors.
-            <br />
-            <span className="inline-block bg-cherry text-cream px-4 -rotate-[2deg]">
-              one promise.
-            </span>
+            Three flavors,{" "}
+            <span className="font-script font-bold text-cherry not-italic inline-block -rotate-2 mx-1">
+              one
+            </span>{" "}
+            promise.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
