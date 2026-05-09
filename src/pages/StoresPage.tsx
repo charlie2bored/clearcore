@@ -35,13 +35,13 @@ export default function StoresPage() {
 
   return (
     <>
-      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 bg-bone">
+      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 bg-cream">
         <div className="max-w-[1200px] mx-auto text-center">
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-sage font-display"
+            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-cherry font-display"
           >
             Locations
           </motion.span>
@@ -53,14 +53,14 @@ export default function StoresPage() {
           >
             Find a bar
             <br />
-            <span className="inline-block bg-mist text-ink px-4 -rotate-[2deg]">
+            <span className="inline-block bg-mint text-ink px-4 -rotate-[2deg]">
               near you.
             </span>
           </motion.h1>
         </div>
       </section>
 
-      <section className="px-6 pb-20 md:pb-28 bg-bone">
+      <section className="px-6 pb-20 md:pb-28 bg-cream">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -83,7 +83,7 @@ export default function StoresPage() {
           />
           <button
             type="submit"
-            className="bg-ink text-bone font-display tracking-[0.18em] uppercase text-sm px-6 md:px-8 py-4 rounded-full hover:bg-sage transition-colors"
+            className="bg-ink text-cream font-display tracking-[0.18em] uppercase text-sm px-6 md:px-8 py-4 rounded-full hover:bg-cherry transition-colors"
           >
             Search
           </button>
@@ -97,7 +97,7 @@ export default function StoresPage() {
           )}
 
           {submitted !== null && matches.length === 0 && (
-            <div className="text-center bg-[#e8e3d2] rounded-2xl p-10">
+            <div className="text-center bg-[#f4ebd0] rounded-2xl p-10">
               <p className="font-display uppercase text-2xl text-ink">
                 No nearby stockists yet.
               </p>
@@ -107,7 +107,7 @@ export default function StoresPage() {
               </p>
               <a
                 href="/contact"
-                className="mt-6 inline-block bg-ink text-bone font-display tracking-[0.18em] uppercase text-xs px-6 py-3 rounded-full hover:bg-sage transition-colors"
+                className="mt-6 inline-block bg-ink text-cream font-display tracking-[0.18em] uppercase text-xs px-6 py-3 rounded-full hover:bg-cherry transition-colors"
               >
                 Request a stockist
               </a>
@@ -119,7 +119,7 @@ export default function StoresPage() {
               {matches.map((s) => (
                 <li
                   key={`${s.name}-${s.zip}`}
-                  className="bg-[#e8e3d2] rounded-2xl px-6 py-5 border border-ink/10 flex items-center justify-between gap-4"
+                  className="bg-[#f4ebd0] rounded-2xl px-6 py-5 border border-ink/10 flex items-center justify-between gap-4"
                 >
                   <div>
                     <h3 className="font-display uppercase text-lg text-ink">

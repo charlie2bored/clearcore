@@ -18,7 +18,7 @@ export default function Navbar() {
         <Link
           to="/"
           className={`font-display italic font-semibold text-2xl md:text-3xl pointer-events-auto select-none transition-colors ${
-            open ? "text-bone" : "text-ink"
+            open ? "text-cream" : "text-ink"
           }`}
         >
           Clear Core
@@ -34,19 +34,19 @@ export default function Navbar() {
           <span
             className={`block h-[2px] w-7 transition-all ${
               open
-                ? "translate-y-[7px] rotate-45 bg-bone"
+                ? "translate-y-[7px] rotate-45 bg-cream"
                 : "bg-ink"
             }`}
           />
           <span
             className={`block h-[2px] w-7 transition-opacity ${
-              open ? "opacity-0 bg-bone" : "bg-ink"
+              open ? "opacity-0 bg-cream" : "bg-ink"
             }`}
           />
           <span
             className={`block h-[2px] w-7 transition-all ${
               open
-                ? "-translate-y-[7px] -rotate-45 bg-bone"
+                ? "-translate-y-[7px] -rotate-45 bg-cream"
                 : "bg-ink"
             }`}
           />
@@ -57,8 +57,8 @@ export default function Navbar() {
           to="/stores"
           className={`pointer-events-auto border text-xs md:text-sm font-display tracking-[0.15em] uppercase px-5 md:px-6 py-3 rounded-full transition-colors ${
             open
-              ? "bg-transparent border-bone text-bone hover:bg-bone hover:text-ink"
-              : "bg-bone border-ink/10 text-ink hover:bg-ink hover:text-bone"
+              ? "bg-transparent border-cream text-cream hover:bg-cream hover:text-ink"
+              : "bg-cream border-ink/10 text-ink hover:bg-ink hover:text-cream"
           }`}
         >
           Find In Stores

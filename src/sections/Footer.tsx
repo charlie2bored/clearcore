@@ -10,7 +10,7 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-bone">
+    <footer className="bg-ink text-cream">
       {/* big call-to-action band */}
       <div className="px-6 md:px-12 py-20 md:py-28 text-center">
         <motion.h2
@@ -22,7 +22,7 @@ export default function Footer() {
         >
           Find a bar
           <br />
-          <span className="inline-block bg-mist text-ink px-4 -rotate-[2deg]">
+          <span className="inline-block bg-mint text-ink px-4 -rotate-[2deg]">
             near you
           </span>
         </motion.h2>
@@ -36,7 +36,7 @@ export default function Footer() {
         >
           <Link
             to="/stores"
-            className="inline-block bg-bone text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-mist transition-colors"
+            className="inline-block bg-cream text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-mint transition-colors"
           >
             Find In Stores
           </Link>
@@ -44,18 +44,18 @@ export default function Footer() {
       </div>
 
       {/* base bar */}
-      <div className="border-t border-bone/15 px-6 md:px-12 py-8 flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between text-xs md:text-sm">
+      <div className="border-t border-cream/15 px-6 md:px-12 py-8 flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between text-xs md:text-sm">
         <Link to="/" className="font-display italic font-semibold text-xl">
           Clear Core
         </Link>
-        <nav className="flex gap-6 uppercase tracking-widest text-bone/70">
+        <nav className="flex gap-6 uppercase tracking-widest text-cream/70">
           {navLinks.map((l) => (
-            <Link key={l.to} to={l.to} className="hover:text-bone transition-colors">
+            <Link key={l.to} to={l.to} className="hover:text-cream transition-colors">
               {l.label}
             </Link>
           ))}
         </nav>
-        <span className="text-bone/50">
+        <span className="text-cream/50">
           © {new Date().getFullYear()} Clear Core
         </span>
       </div>

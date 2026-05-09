@@ -19,13 +19,13 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-bone">
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-cream">
         <div className="max-w-[1200px] mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="block uppercase tracking-[0.3em] text-xs md:text-sm text-sage font-display"
+            className="block uppercase tracking-[0.3em] text-xs md:text-sm text-cherry font-display"
           >
             Our story
           </motion.span>
@@ -37,14 +37,14 @@ export default function AboutPage() {
           >
             Built by people
             <br />
-            <span className="inline-block bg-sage text-bone px-4 -rotate-[2deg]">
+            <span className="inline-block bg-cherry text-cream px-4 -rotate-[2deg]">
               who eat them.
             </span>
           </motion.h1>
         </div>
       </section>
 
-      <section className="px-6 pb-20 md:pb-28 bg-bone">
+      <section className="px-6 pb-20 md:pb-28 bg-cream">
         <div className="max-w-[900px] mx-auto space-y-6 text-ink/85 text-base md:text-lg leading-relaxed">
           <p>
             Clear Core started in a kitchen, not a lab. We were tired of
@@ -65,7 +65,7 @@ export default function AboutPage() {
       </section>
 
       {/* values */}
-      <section className="bg-[#e8e3d2] py-20 md:py-28 px-6">
+      <section className="bg-[#f4ebd0] py-20 md:py-28 px-6">
         <div className="max-w-[1200px] mx-auto">
           <h2 className="font-display uppercase text-ink text-[10vw] md:text-[4vw] leading-[0.95] text-center mb-14">
             What we won't compromise on.
@@ -78,9 +78,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-bone rounded-3xl p-8 border border-ink/10"
+                className="bg-cream rounded-3xl p-8 border border-ink/10"
               >
-                <span className="font-display text-5xl text-mist">
+                <span className="font-display text-5xl text-mint">
                   0{i + 1}
                 </span>
                 <h3 className="mt-4 font-display uppercase text-2xl text-ink">
@@ -94,20 +94,20 @@ export default function AboutPage() {
       </section>
 
       {/* cta */}
-      <section className="bg-ink text-bone text-center py-20 md:py-28 px-6">
+      <section className="bg-ink text-cream text-center py-20 md:py-28 px-6">
         <h2 className="font-display uppercase text-[10vw] md:text-[5vw] leading-[0.95]">
           Try one yourself.
         </h2>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/flavors"
-            className="inline-block bg-mist text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-bone transition-colors"
+            className="inline-block bg-mint text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cream transition-colors"
           >
             See the flavors
           </Link>
           <Link
             to="/stores"
-            className="inline-block border border-bone text-bone font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-bone hover:text-ink transition-colors"
+            className="inline-block border border-cream text-cream font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cream hover:text-ink transition-colors"
           >
             Find In Stores
           </Link>

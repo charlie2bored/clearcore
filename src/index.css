@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  /* Lab Notebook palette — sage + bone + ink, single clay accent */
-  --color-bone: #f4f1ea;
-  --color-dust: #e8e3d2;
-  --color-mist: #c5cdb6;
-  --color-sage: #5e7050;
-  --color-deep-sage: #3f4d36;
+  /* Snack Mix palette — bright multi-accent on warm cream */
+  --color-cream: #fdf6e3;
+  --color-cream-2: #f4ebd0;
+  --color-butter: #fbd97a;
+  --color-mint: #c5e3c8;
+  --color-cherry: #e23e3e;
+  --color-tangerine: #f59e2c;
+  --color-sky: #4ea0d6;
   --color-ink: #1a1a1a;
-  --color-clay: #c8553d;
   --color-black: #0a0a0a;
 
-  /* Fraunces is a single variable serif used for all display + wordmark.
-     Italic + optical-sizing axes carry brand voice instead of a script font. */
-  --font-display: "Fraunces", "Times New Roman", serif;
+  /* Bricolage Grotesque is variable across opsz + wght — leaning into the
+     wonky/friendly axis for display. Caveat handles handwritten accents. */
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --font-script: "Caveat", "Bricolage Grotesque", cursive;
 }
 
 @layer base {
@@ -23,7 +24,7 @@
   body {
     margin: 0;
     padding: 0;
-    background-color: var(--color-bone);
+    background-color: var(--color-cream);
     color: var(--color-ink);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
@@ -42,18 +43,25 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 600;
-    /* Editorial serif sets its own rhythm — keep upright, normal case. */
-    letter-spacing: -0.015em;
-    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
     margin: 0;
-    /* Use Fraunces' optical-sizing axis at display sizes for sharper details */
     font-optical-sizing: auto;
   }
 }
 
 @layer components {
   .contact-input {
-    @apply w-full bg-bone border border-ink/20 rounded-2xl px-5 py-4 text-ink placeholder-ink/40 focus:outline-none focus:border-ink transition-colors;
+    @apply w-full bg-cream border border-ink/20 rounded-2xl px-5 py-4 text-ink placeholder-ink/40 focus:outline-none focus:border-ink transition-colors;
+  }
+
+  /* Sticker badge — chunky border + bright fill + offset shadow.
+     Used as the new visual signature in place of tilted color blocks. */
+  .sticker {
+    @apply inline-flex items-center justify-center font-display font-bold uppercase tracking-tight text-ink border-[3px] border-ink rounded-full px-4 py-2 shadow-[3px_3px_0_0_var(--color-ink)] transition-transform;
+  }
+  .sticker:hover {
+    @apply -translate-y-0.5;
   }
 }

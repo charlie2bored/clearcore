@@ -12,7 +12,7 @@ export default function Nutrition() {
   return (
     <section
       id="nutrition"
-      className="relative w-full bg-[#e8e3d2] overflow-hidden py-24 md:py-32 px-6"
+      className="relative w-full bg-[#f4ebd0] overflow-hidden py-24 md:py-32 px-6"
     >
       <div className="max-w-[1400px] mx-auto">
         {/* heading */}
@@ -23,13 +23,13 @@ export default function Nutrition() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-block uppercase tracking-[0.25em] text-xs md:text-sm text-sage font-display">
+            <span className="inline-block uppercase tracking-[0.25em] text-xs md:text-sm text-cherry font-display">
               The fine print
             </span>
             <h2 className="mt-3 font-display uppercase text-ink text-[12vw] md:text-[5.5vw] leading-[0.92]">
               Built clean.
               <br />
-              <span className="inline-block bg-sage text-bone px-4 -rotate-[2deg]">
+              <span className="inline-block bg-cherry text-cream px-4 -rotate-[2deg]">
                 Built honest.
               </span>
             </h2>
@@ -53,7 +53,7 @@ export default function Nutrition() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="bg-bone rounded-full shadow-xl px-6 md:px-12 py-5 md:py-7 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-2 mb-16"
+          className="bg-cream rounded-full shadow-xl px-6 md:px-12 py-5 md:py-7 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-2 mb-16"
         >
           {callouts.map((c) => (
             <div
@@ -106,7 +106,7 @@ export default function Nutrition() {
  */
 function NutritionFactsPanel() {
   return (
-    <div className="bg-bone text-ink rounded-2xl p-6 md:p-8 max-w-md mx-auto md:mx-0 shadow-xl border-2 border-ink font-body">
+    <div className="bg-cream text-ink rounded-2xl p-6 md:p-8 max-w-md mx-auto md:mx-0 shadow-xl border-2 border-ink font-body">
       <h3 className="font-display text-3xl md:text-4xl tracking-tight uppercase border-b-[6px] border-ink pb-1 mb-2">
         Nutrition Facts
       </h3>

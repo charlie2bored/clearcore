@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen w-full overflow-x-hidden bg-bone text-ink flex flex-col">
+      <div className="min-h-screen w-full overflow-x-hidden bg-cream text-ink flex flex-col">
         <Navbar />
         <main className="flex-1">
           <Routes>

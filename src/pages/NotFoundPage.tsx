@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export default function NotFoundPage() {
   return (
-    <section className="min-h-[80vh] flex items-center justify-center px-6 py-32 bg-bone text-center">
+    <section className="min-h-[80vh] flex items-center justify-center px-6 py-32 bg-cream text-center">
       <div>
-        <span className="font-display text-[20vw] md:text-[10vw] text-mist leading-none">
+        <span className="font-display text-[20vw] md:text-[10vw] text-mint leading-none">
           404
         </span>
         <h1 className="font-display uppercase text-ink text-[10vw] md:text-[4vw] leading-[0.95] mt-4">
@@ -17,13 +17,13 @@ export default function NotFoundPage() {
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/"
-            className="inline-block bg-ink text-bone font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-sage transition-colors"
+            className="inline-block bg-ink text-cream font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cherry transition-colors"
           >
             Back home
           </Link>
           <Link
             to="/flavors"
-            className="inline-block border border-ink text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-ink hover:text-bone transition-colors"
+            className="inline-block border border-ink text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-ink hover:text-cream transition-colors"
           >
             See flavors
           </Link>

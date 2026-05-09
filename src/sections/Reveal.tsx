@@ -25,7 +25,7 @@ export default function Reveal() {
         wordsRef.current,
         { color: "#1a1a1a", opacity: 0.25 },
         {
-          color: "#f4f1ea",
+          color: "#fdf6e3",
           opacity: 1,
           stagger: 0.04,
           ease: "none",
@@ -74,7 +74,7 @@ export default function Reveal() {
         </span>
         <span className="block">
           {lines[3].map((w, i) => renderWord(w, `d-${i}-${w}`))}
-          <span className="inline-block bg-mist text-ink px-3 md:px-5 -rotate-[3deg] mx-1">
+          <span className="inline-block bg-mint text-ink px-3 md:px-5 -rotate-[3deg] mx-1">
             no shortcuts
           </span>
         </span>

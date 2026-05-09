@@ -5,7 +5,7 @@ import { flavors } from "../data/flavors";
 
 export default function Products() {
   return (
-    <section id="flavors" className="relative w-full bg-bone py-24 md:py-32 px-6">
+    <section id="flavors" className="relative w-full bg-cream py-24 md:py-32 px-6">
       <div className="max-w-[1400px] mx-auto">
         <div className="text-center mb-16 md:mb-20">
           <motion.span
@@ -13,7 +13,7 @@ export default function Products() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block uppercase tracking-[0.25em] text-xs md:text-sm text-sage font-display"
+            className="inline-block uppercase tracking-[0.25em] text-xs md:text-sm text-cherry font-display"
           >
             Pick your bar
           </motion.span>
@@ -27,7 +27,7 @@ export default function Products() {
           >
             Three flavors,
             <br />
-            <span className="inline-block bg-sage text-bone px-4 -rotate-[2deg]">
+            <span className="inline-block bg-cherry text-cream px-4 -rotate-[2deg]">
               zero gluten.
             </span>
           </motion.h2>
@@ -42,7 +42,7 @@ export default function Products() {
         <div className="text-center mt-12">
           <Link
             to="/flavors"
-            className="inline-block bg-ink text-bone font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-sage transition-colors"
+            className="inline-block bg-ink text-cream font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cherry transition-colors"
           >
             Explore all flavors
           </Link>

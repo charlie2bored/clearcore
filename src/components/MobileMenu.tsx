@@ -25,7 +25,7 @@ export default function MobileMenu({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-40 bg-ink text-bone flex flex-col items-center justify-center"
+          className="fixed inset-0 z-40 bg-ink text-cream flex flex-col items-center justify-center"
         >
           <nav className="flex flex-col items-center gap-6 md:gap-8">
             {links.map((l, i) => (
@@ -39,7 +39,7 @@ export default function MobileMenu({
                 <Link
                   to={l.to}
                   onClick={onClose}
-                  className="font-display uppercase tracking-tight text-5xl md:text-7xl hover:text-mist transition-colors"
+                  className="font-display uppercase tracking-tight text-5xl md:text-7xl hover:text-mint transition-colors"
                 >
                   {l.label}
                 </Link>
@@ -52,7 +52,7 @@ export default function MobileMenu({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ delay: 0.4 }}
-            className="absolute bottom-10 font-display italic font-semibold text-2xl text-bone/70"
+            className="absolute bottom-10 font-display italic font-semibold text-2xl text-cream/70"
           >
             Clear Core
           </motion.span>

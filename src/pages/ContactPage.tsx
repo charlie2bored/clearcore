@@ -39,13 +39,13 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 bg-bone">
+      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 bg-cream">
         <div className="max-w-[1200px] mx-auto text-center">
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-sage font-display"
+            className="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-cherry font-display"
           >
             Say hi
           </motion.span>
@@ -57,7 +57,7 @@ export default function ContactPage() {
           >
             We read
             <br />
-            <span className="inline-block bg-sage text-bone px-4 -rotate-[2deg]">
+            <span className="inline-block bg-cherry text-cream px-4 -rotate-[2deg]">
               every note.
             </span>
           </motion.h1>
@@ -68,13 +68,13 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="px-6 pb-24 md:pb-32 bg-bone">
+      <section className="px-6 pb-24 md:pb-32 bg-cream">
         <div className="max-w-2xl mx-auto">
           {sent ? (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-[#e8e3d2] rounded-3xl p-10 text-center"
+              className="bg-[#f4ebd0] rounded-3xl p-10 text-center"
             >
               <h2 className="font-display uppercase text-3xl md:text-4xl text-ink">
                 Thanks for the note.
@@ -135,7 +135,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full md:w-auto bg-ink text-bone font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-sage transition-colors"
+                className="w-full md:w-auto bg-ink text-cream font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-cherry transition-colors"
               >
                 Send message
               </button>

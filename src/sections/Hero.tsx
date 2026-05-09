@@ -2,194 +2,231 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 /**
- * Editorial-split hero.
+ * Snack Mix hero.
  *
- * Replaces the previous floating-products composition with a fundamentally
- * different geometry: asymmetric two-column grid, single product photo,
- * mixed-case serif headline, and spec-sheet annotation callouts pointing
- * to the bar — a "lab notebook" signature unique to Clear Core.
+ * Editorial split kept (asymmetric 5/7 grid + single product), but the
+ * voice flips from clinical lab-notebook to playful sticker pack:
+ * handwritten Caveat eyebrow, chunky Bricolage headline, sticker badges
+ * with bouncy spring motion replacing the thin annotation lines.
  */
 export default function Hero() {
   return (
-    <section className="relative w-full bg-bone overflow-hidden pt-28 md:pt-32 pb-20 md:pb-28 px-6 md:px-12">
-      {/* Thin clay rule running across the section like a notebook divider */}
-      <div className="absolute top-24 left-0 right-0 h-px bg-ink/10" aria-hidden="true" />
+    <section className="relative w-full bg-cream overflow-hidden pt-28 md:pt-32 pb-20 md:pb-28 px-6 md:px-12">
+      {/* Soft tangerine wash blob in the background — adds warmth without
+          re-introducing the reference's drip-splash motif. */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-32 -right-32 w-[40rem] h-[40rem] rounded-full bg-tangerine/20 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-40 -left-32 w-[36rem] h-[36rem] rounded-full bg-mint/30 blur-3xl"
+      />
 
-      <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-        {/* LEFT — text column (5 of 12) */}
+      <div className="relative max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        {/* LEFT — text column */}
         <div className="lg:col-span-5 relative">
+          {/* handwritten eyebrow */}
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase text-ink/60"
+            initial={{ opacity: 0, rotate: -8, y: -10 }}
+            animate={{ opacity: 1, rotate: -3, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 220,
+              damping: 14,
+              delay: 0.1,
+            }}
+            className="font-script text-cherry text-2xl md:text-3xl inline-block"
           >
-            <span className="text-clay">●</span>{" "}
-            <span>No. 01 — Gluten-Free Protein Bar</span>
+            psst — we made this <span aria-hidden="true">✦</span>
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="mt-6 font-display font-normal text-ink text-[10vw] md:text-[5.5vw] lg:text-[4.5vw] leading-[1.0] tracking-[-0.02em]"
-            style={{ fontVariationSettings: '"opsz" 144' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            className="mt-4 font-display font-bold text-ink text-[12vw] md:text-[6vw] lg:text-[5vw] leading-[0.92] tracking-[-0.025em]"
           >
-            A protein bar that finally <em className="italic font-normal text-sage">tastes</em> like food.
+            A protein bar that finally{" "}
+            <span className="font-script font-bold text-cherry not-italic inline-block -rotate-2 mx-1">
+              tastes
+            </span>{" "}
+            like food.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-            className="mt-7 max-w-md text-ink/75 text-base md:text-lg leading-relaxed"
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="mt-6 max-w-md text-ink/80 text-base md:text-lg leading-relaxed"
           >
-            Slow-roasted cocoa, real chocolate, twenty grams of complete protein.
-            No mystery sweeteners, no chalky aftertaste — just a short list of
-            ingredients you'd put in your own pantry.
+            Real chocolate. Real protein. Zero gluten and zero things you
+            can't pronounce. Made for snack o'clock — whatever time that is
+            for you.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6"
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4"
           >
             <Link
               to="/flavors"
-              className="inline-flex items-center gap-2 bg-ink text-bone font-mono text-xs tracking-[0.2em] uppercase px-7 py-4 rounded-full hover:bg-sage transition-colors"
+              className="group inline-flex items-center gap-2 bg-cherry text-cream font-display font-bold uppercase text-sm tracking-tight px-7 py-4 rounded-full border-[3px] border-ink shadow-[4px_4px_0_0_var(--color-ink)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_var(--color-ink)] transition-all"
             >
               Try a Bar
-              <span aria-hidden="true">→</span>
+              <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">
+                →
+              </span>
             </Link>
             <Link
               to="/flavors/chocolate"
-              className="inline-block font-mono text-xs tracking-[0.2em] uppercase text-ink/70 underline underline-offset-4 decoration-ink/30 hover:text-ink hover:decoration-ink"
+              className="font-script text-ink/80 text-xl hover:text-cherry transition-colors underline decoration-wavy decoration-tangerine underline-offset-4"
             >
-              Read the ingredients
+              or peek the ingredients
             </Link>
           </motion.div>
-
-          {/* Tiny footnote-style metadata, very lab-notebook */}
-          <div className="hidden md:block absolute -bottom-12 left-0 font-mono text-[10px] tracking-[0.18em] uppercase text-ink/40">
-            Made in small batches · Brooklyn, NY
-          </div>
         </div>
 
-        {/* RIGHT — product + annotations column (7 of 12) */}
+        {/* RIGHT — product + stickers */}
         <div className="lg:col-span-7 relative aspect-[4/5] md:aspect-[3/2] lg:aspect-square w-full">
           {/* product image */}
           <motion.img
             src="/products/chocolate.png"
             alt="Clear Core chocolate protein bar"
-            initial={{ opacity: 0, scale: 0.92, rotate: -8 }}
+            initial={{ opacity: 0, scale: 0.85, rotate: -12 }}
             animate={{ opacity: 1, scale: 1, rotate: -4 }}
-            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            transition={{
+              type: "spring",
+              stiffness: 90,
+              damping: 14,
+              delay: 0.25,
+            }}
             className="absolute inset-0 m-auto w-[78%] h-auto object-contain drop-shadow-[0_30px_60px_rgba(26,26,26,0.18)]"
           />
 
-          {/* Spec-sheet annotation callouts */}
-          <Annotation
-            label="20g protein"
-            note="Whey + milk blend"
-            position="top-left"
-            delay={0.7}
+          {/* doodle scribbles in Caveat */}
+          <DoodleAccent
+            className="top-[6%] left-[20%] text-tangerine"
+            char="✦"
+            delay={1.2}
           />
-          <Annotation
-            label="real chocolate"
-            note="Dutch-processed cocoa"
-            position="top-right"
-            delay={0.85}
+          <DoodleAccent
+            className="top-[18%] right-[24%] text-cherry"
+            char="✸"
+            delay={1.4}
           />
-          <Annotation
-            label="5g fiber"
-            note="From tapioca + nuts"
-            position="bottom-left"
-            delay={1.0}
-          />
-          <Annotation
-            label="gluten free"
-            note="Every batch tested"
-            position="bottom-right"
-            delay={1.15}
+          <DoodleAccent
+            className="bottom-[14%] left-[26%] text-sky"
+            char="✶"
+            delay={1.5}
           />
 
-          {/* Index marker, top-right of frame */}
-          <div className="absolute top-0 right-0 font-mono text-[10px] tracking-[0.2em] uppercase text-ink/40 hidden md:block">
-            Fig. 01 / Chocolate
-          </div>
+          {/* sticker badges — replaces the annotation lines */}
+          <Sticker
+            className="top-[8%] left-[2%]"
+            bg="bg-cherry"
+            text="text-cream"
+            rotate="-8deg"
+            delay={0.6}
+          >
+            20g protein
+          </Sticker>
+          <Sticker
+            className="top-[10%] right-[2%]"
+            bg="bg-tangerine"
+            text="text-ink"
+            rotate="6deg"
+            delay={0.75}
+          >
+            gluten free
+          </Sticker>
+          <Sticker
+            className="bottom-[18%] left-[3%]"
+            bg="bg-sky"
+            text="text-cream"
+            rotate="-4deg"
+            delay={0.9}
+          >
+            real chocolate
+          </Sticker>
+          <Sticker
+            className="bottom-[8%] right-[5%]"
+            bg="bg-butter"
+            text="text-ink"
+            rotate="10deg"
+            delay={1.05}
+          >
+            5g fiber
+          </Sticker>
         </div>
       </div>
     </section>
   );
 }
 
-type AnnotationPos = "top-left" | "top-right" | "bottom-left" | "bottom-right";
-
 /**
- * Spec-sheet annotation: small dot near the product, thin connector line,
- * and a two-line mono caps label. Position prop controls which corner of
- * the parent the annotation sits in (and which way the line points).
+ * Sticker badge — chunky border, bright fill, offset shadow, rotation.
+ * Springs in with a small wobble; hover gives a subtle lift.
  */
-function Annotation({
-  label,
-  note,
-  position,
+function Sticker({
+  children,
+  className,
+  bg,
+  text,
+  rotate,
   delay = 0,
 }: {
-  label: string;
-  note: string;
-  position: AnnotationPos;
+  children: React.ReactNode;
+  className?: string;
+  bg: string;
+  text: string;
+  rotate: string;
   delay?: number;
 }) {
-  // map of corner placement + flex direction so dot sits toward the bar
-  const layout = {
-    "top-left": {
-      wrap: "top-[8%] left-[2%] flex-row items-center",
-      line: "w-10 md:w-16 border-t",
-      order: ["dot", "line", "text"] as const,
-      textAlign: "text-left",
-    },
-    "top-right": {
-      wrap: "top-[12%] right-[2%] flex-row-reverse items-center",
-      line: "w-10 md:w-16 border-t",
-      order: ["dot", "line", "text"] as const,
-      textAlign: "text-right",
-    },
-    "bottom-left": {
-      wrap: "bottom-[12%] left-[2%] flex-row items-center",
-      line: "w-10 md:w-16 border-t",
-      order: ["dot", "line", "text"] as const,
-      textAlign: "text-left",
-    },
-    "bottom-right": {
-      wrap: "bottom-[8%] right-[2%] flex-row-reverse items-center",
-      line: "w-10 md:w-16 border-t",
-      order: ["dot", "line", "text"] as const,
-      textAlign: "text-right",
-    },
-  }[position];
-
   return (
-    <motion.div
-      initial={{ opacity: 0, x: position.includes("right") ? 12 : -12 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      className={`absolute hidden md:flex gap-3 ${layout.wrap}`}
+    <motion.span
+      initial={{ opacity: 0, scale: 0.4, rotate: 0 }}
+      animate={{ opacity: 1, scale: 1, rotate: parseFloat(rotate) }}
+      whileHover={{ rotate: parseFloat(rotate) + 4, scale: 1.06 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 12,
+        delay,
+      }}
+      className={`absolute hidden md:inline-flex items-center font-display font-bold uppercase tracking-tight text-sm md:text-base px-4 py-2 rounded-full border-[3px] border-ink shadow-[3px_3px_0_0_var(--color-ink)] cursor-default select-none ${bg} ${text} ${className ?? ""}`}
     >
-      {/* dot */}
-      <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-clay" />
-      {/* line */}
-      <span className={`${layout.line} border-ink/30 shrink-0`} />
-      {/* label */}
-      <div className={`${layout.textAlign}`}>
-        <div className="font-mono text-[10px] md:text-xs tracking-[0.18em] uppercase text-ink whitespace-nowrap">
-          {label}
-        </div>
-        <div className="font-mono text-[9px] md:text-[10px] tracking-[0.1em] text-ink/50 mt-0.5 whitespace-nowrap">
-          {note}
-        </div>
-      </div>
-    </motion.div>
+      {children}
+    </motion.span>
+  );
+}
+
+/** Sparkle/asterisk doodle in handwritten Caveat */
+function DoodleAccent({
+  char,
+  className,
+  delay = 0,
+}: {
+  char: string;
+  className?: string;
+  delay?: number;
+}) {
+  return (
+    <motion.span
+      initial={{ opacity: 0, scale: 0, rotate: -90 }}
+      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 200,
+        damping: 10,
+        delay,
+      }}
+      className={`absolute hidden md:inline-block font-script text-3xl md:text-5xl pointer-events-none select-none ${className ?? ""}`}
+      aria-hidden="true"
+    >
+      {char}
+    </motion.span>
   );
 }

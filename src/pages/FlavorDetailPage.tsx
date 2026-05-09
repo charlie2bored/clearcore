@@ -41,20 +41,20 @@ export default function FlavorDetailPage() {
               {flavor.description}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <span className="bg-bone/20 backdrop-blur px-4 py-2 rounded-full text-sm">
+              <span className="bg-cream/20 backdrop-blur px-4 py-2 rounded-full text-sm">
                 20g Protein
               </span>
-              <span className="bg-bone/20 backdrop-blur px-4 py-2 rounded-full text-sm">
+              <span className="bg-cream/20 backdrop-blur px-4 py-2 rounded-full text-sm">
                 5g Fiber
               </span>
-              <span className="bg-bone/20 backdrop-blur px-4 py-2 rounded-full text-sm">
+              <span className="bg-cream/20 backdrop-blur px-4 py-2 rounded-full text-sm">
                 Gluten Free
               </span>
             </div>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
                 to="/stores"
-                className="inline-block bg-bone text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-ink hover:text-bone transition-colors"
+                className="inline-block bg-cream text-ink font-display tracking-[0.18em] uppercase text-sm px-10 py-4 rounded-full hover:bg-ink hover:text-cream transition-colors"
               >
                 Find In Stores
               </Link>
@@ -77,16 +77,16 @@ export default function FlavorDetailPage() {
       </section>
 
       {/* ingredients */}
-      <section className="py-20 md:py-28 px-6 bg-bone">
+      <section className="py-20 md:py-28 px-6 bg-cream">
         <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-12">
           <div>
-            <span className="inline-block uppercase tracking-[0.25em] text-xs md:text-sm text-sage font-display">
+            <span className="inline-block uppercase tracking-[0.25em] text-xs md:text-sm text-cherry font-display">
               What's inside
             </span>
             <h2 className="mt-3 font-display uppercase text-ink text-[10vw] md:text-[4vw] leading-[0.95]">
               No filler.
               <br />
-              <span className="inline-block bg-sage text-bone px-3 -rotate-[2deg]">
+              <span className="inline-block bg-cherry text-cream px-3 -rotate-[2deg]">
                 just food.
               </span>
             </h2>
@@ -101,7 +101,7 @@ export default function FlavorDetailPage() {
             {flavor.ingredients.map((ing) => (
               <li
                 key={ing}
-                className="flex items-center gap-4 bg-[#e8e3d2] rounded-2xl px-5 py-4 border border-ink/10"
+                className="flex items-center gap-4 bg-[#f4ebd0] rounded-2xl px-5 py-4 border border-ink/10"
               >
                 <span
                   className="w-3 h-3 rounded-full shrink-0"
@@ -115,7 +115,7 @@ export default function FlavorDetailPage() {
       </section>
 
       {/* other flavors */}
-      <section className="py-20 md:py-28 px-6 bg-[#e8e3d2]">
+      <section className="py-20 md:py-28 px-6 bg-[#f4ebd0]">
         <div className="max-w-[1100px] mx-auto">
           <h2 className="font-display uppercase text-ink text-[10vw] md:text-[4vw] leading-[0.95] text-center mb-12">
             Try the others
