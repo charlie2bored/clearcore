@@ -33,9 +33,9 @@ export default function Hero() {
           delay: 0.2,
         }}
         className="absolute pointer-events-none select-none drop-shadow-[0_30px_80px_rgba(26,26,26,0.18)]
-          right-[-22%] sm:right-[-18%] md:right-[-12%] lg:right-[-8%]
+          right-[-32%] sm:right-[-26%] md:right-[-22%] lg:right-[-18%] xl:right-[-16%]
           top-1/2 -translate-y-1/2
-          w-[110%] sm:w-[90%] md:w-[75%] lg:w-[62%] xl:w-[58%]
+          w-[100%] sm:w-[82%] md:w-[68%] lg:w-[58%] xl:w-[54%]
           max-w-none
           opacity-95"
       />
