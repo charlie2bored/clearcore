@@ -70,7 +70,7 @@ export default function FlavorDetailPage() {
             <img
               src={flavor.image}
               alt={`Clear Core ${flavor.name} protein bar`}
-              className="w-full max-w-lg drop-shadow-2xl"
+              className="w-full max-w-2xl drop-shadow-2xl"
             />
           </motion.div>
         </div>

@@ -70,8 +70,11 @@ export default function Nutrition() {
           ))}
         </motion.div>
 
-        {/* product + facts panel */}
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+        {/* product + facts panel — sized so the bar visually balances
+            the tall facts label. Landscape packaging means the image is
+            ~1.5:1, so it needs roughly 1.5x the width of the panel to
+            land at the same visual height. */}
+        <div className="grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -82,7 +85,7 @@ export default function Nutrition() {
             <img
               src="/products/chocolate.png"
               alt="Clear Core chocolate protein bar"
-              className="w-full max-w-md drop-shadow-2xl rotate-[-4deg]"
+              className="w-full max-w-none drop-shadow-2xl rotate-[-6deg]"
             />
           </motion.div>
 
